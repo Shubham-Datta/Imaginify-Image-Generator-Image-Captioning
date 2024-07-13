@@ -33,6 +33,30 @@ Imaginify is a desktop application that leverages Hugging Face models for image 
     python imaginify.py
     ```
 
+## GPU Support
+
+If you have a dedicated GPU and want to leverage it for faster image generation, you need to modify the code in `imaginify.py`:
+
+1. Open `imaginify.py` in your preferred code editor.
+2. Locate the line where the Stable Diffusion pipeline is moved to the device:
+    ```python
+    pipe = pipe.to("cpu")
+    ```
+3. Replace `"cpu"` with `"cuda"` to use the GPU:
+    ```python
+    pipe = pipe.to("cuda")
+    ```
+
+Your updated code in `imaginify.py` should look like this:
+```python
+# Initialize the stable diffusion model with Hugging Face token
+def load_stable_diffusion_model():    
+    model_id = "CompVis/stable-diffusion-v1-4"
+    scheduler = EulerAncestralDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler", use_auth_token=token)
+    pipe = StableDiffusionPipeline.from_pretrained(model_id, scheduler=scheduler, use_auth_token=token)
+    pipe = pipe.to("cuda")  # Change "cpu" to "cuda" for GPU support
+    return pipe
+
 ## Usage
 
 - **Image Generation:**
