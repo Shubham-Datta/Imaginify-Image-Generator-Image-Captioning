@@ -56,6 +56,7 @@ def load_stable_diffusion_model():
     pipe = StableDiffusionPipeline.from_pretrained(model_id, scheduler=scheduler, use_auth_token=token)
     pipe = pipe.to("cuda")  # Change "cpu" to "cuda" for GPU support
     return pipe
+```
 
 ## Usage
 
