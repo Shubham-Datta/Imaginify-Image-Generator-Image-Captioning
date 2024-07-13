@@ -23,9 +23,9 @@ Imaginify is a desktop application that leverages Hugging Face models for image 
 
 3. **Add your Hugging Face API token:**
    - Sign up or log in to Hugging Face and get your access token from [here](https://huggingface.co/docs/hub/security-tokens).
-   - Create a file named `authtoken.py` in the root directory and add the following line:
+   - Open the `authtoken.py` file in the root directory and replace `"YOUR_HUGGINGFACE_USER_ACCESS_TOKEN"` with your actual token:
      ```python
-     token = 'your_hugging_face_token_here'
+     token = "your_hugging_face_token_here"
      ```
 
 4. **Run the application:**
