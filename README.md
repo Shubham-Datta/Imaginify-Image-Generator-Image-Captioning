@@ -12,7 +12,7 @@ Imaginify is a desktop application that leverages Hugging Face models for image 
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/Imaginify.git
+    git clone https://github.com/Shubham-Datta/Imaginify.git
     cd Imaginify
     ```
 
